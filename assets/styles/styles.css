@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+body {
+	display: flex;
+	height: 100vh;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
+	background: linear-gradient(135deg, #ec4534, #d88383);
+}
+
+.container {
+	max-width: 700px;
+	width: 100%;
+	background: #fff;
+	padding: 25px 30px;
+	border-radius: 5px;
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+		rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+		rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.container .title {
+	font-size: 25px;
+	font-weight: 500;
+	position: relative;
+}
+
+.container .title::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	height: 3px;
+	width: 30px;
+	background: linear-gradient(135deg, #ec4534, #d88383);
+}
+
+.container form .travel-details {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.container form .payment-details .input-box {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.container .extra-details .input-box {
+	margin: 20px 0 12px 0;
+	width: 100%;
+}
+
+.container form .extra-details input {
+	outline: none;
+}
+
+.container .travel-details .input-box {
+	margin: 20px 0 12px 0;
+	width: 100%;
+}
+
+.input-box .details {
+	display: block;
+	font-weight: 500;
+	margin-bottom: 5px;
+}
+
+form .travel-details .input-box {
+	margin-bottom: 10px;
+	width: calc(100 / 2 - 20px);
+}
+.travel-details .input-box input {
+	height: 45px;
+	width: 100%;
+	outline: none;
+	border: 1px solid #ccc;
+	padding-left: 15px;
+	font-size: 16px;
+	border-bottom-width: 2px;
+	transition: all 0.3s ease;
+}
+
+.travel-details .input-box input:focus,
+.travel-details .input-box input:valid {
+	border-color: #d88383;
+}
+
+.shortcuts-title {
+	font-weight: 500;
+	margin-bottom: 20px;
+}
+
+.shortcuts ul {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	gap: 0.3rem;
+}
+
+.shortcuts button {
+	height: 100%;
+	width: 100%;
+	outline: none;
+	color: #fff;
+	border: none;
+	font-size: 18px;
+	font-weight: 500;
+	letter-spacing: 1px;
+	border-radius: 5px;
+	background: linear-gradient(135deg, #ec4534, #d88383);
+}
+
+.shortcuts button:hover {
+	background: linear-gradient(-136deg, #ec4534, #d88383);
+	cursor: pointer;
+}
+
+form .payment-details .category {
+	display: flex;
+	width: 80%;
+	margin: 14px 0;
+	justify-content: space-between;
+}
+
+.payment-details .category label {
+	display: flex;
+	align-items: center;
+}
+
+.payment-details .category .dot {
+	height: 18px;
+	width: 18px;
+	background: #d9d9d9;
+	border-radius: 50%;
+	margin-right: 10px;
+	border: 5px solid transparent;
+	transition: all 0.3s ease;
+}
+
+#dot-1:checked ~ .category label .one,
+#dot-2:checked ~ .category label .two {
+	border-color: #d9d9d9;
+	background: #d88383;
+}
+
+form input[type='radio'] {
+	display: none;
+}
+
+form .button {
+	height: 45px;
+	margin: 45px 0;
+}
+
+form .button input {
+	height: 100%;
+	width: 100%;
+	outline: none;
+	color: #fff;
+	border: none;
+	font-size: 18px;
+	font-weight: 500;
+	letter-spacing: 1px;
+	border-radius: 5px;
+	background: linear-gradient(135deg, #ec4534, #d88383);
+}
+
+form .button input:hover {
+	background: linear-gradient(-136deg, #ec4534, #d88383);
+}
+
+@media (max-width: 584px) {
+	.container {
+		max-width: 100%;
+	}
+
+	form .travel-details .input-box {
+		margin-bottom: 15px;
+		width: 100%;
+	}
+
+	form .payment-details .category {
+		width: 100%;
+	}
+
+	.container form .travel-details {
+		max-height: 300px;
+		overflow: scroll;
+	}
+
+	.travel-details::-webkit-scrollbar {
+		width: 0;
+	}
+}
+
+.form-control {
+	line-height: 1.1;
+	display: grid;
+	grid-template-columns: 1em auto;
+	gap: 0.5em;
+}
+
+input[type='checkbox'] {
+	-webkit-appearance: none;
+	appearance: none;
+	background-color: #d9d9d9;
+	margin: 0;
+	font: inherit;
+	color: currentColor;
+	width: 1.15em;
+	height: 1.15em;
+	border: none;
+	border-radius: 0.15em;
+	transform: translateY(-0.075em);
+	display: grid;
+	place-content: center;
+}
+
+.form-control + .form-control {
+	margin-top: 1em;
+}
+
+input[type='checkbox']::before {
+	content: '';
+	width: 0.65em;
+	height: 0.65em;
+	transform: scale(0);
+	transition: 120ms transform ease-in-out;
+	box-shadow: inset 1em 1em #d88383;
+}
+
+input[type='checkbox']:checked::before {
+	transform: scale(1);
+}
+
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	padding-top: 200px;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.contenido-modal {
+	position: relative;
+	background-color: white;
+	margin: auto;
+	padding: 20px;
+	border-radius: 10px;
+	width: 60%;
+	-webkit-animation-name: animarsuperior;
+	-webkit-animation-duration: 0.5s;
+	animation-name: animar-superior;
+	animation-duration: 0.5s;
+}
+
+@-webkit-keyframes animatetop {
+	from {
+		top: -300px;
+		opacity: 0;
+	}
+	to {
+		top: 0;
+		opacity: 1;
+	}
+}
+
+@keyframes animarsuperior {
+	from {
+		top: -300px;
+		opacity: 0;
+	}
+	to {
+		top: 0;
+		opacity: 1;
+	}
+}
+
+.cerrar {
+	color: black;
+	float: right;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.cerrar:hover,
+.cerrar:focus {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+}
