@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Presupuestadora LH</title>
+		<link rel="stylesheet" href="/assets/styles/styles.css" />
+		<script src="/assets/scripts/app.js" defer></script>
+	</head>
+	<body>
+		<main>
+			<div class="container">
+				<div class="title">Presupuestadora LH</div>
+				<form action="#">
+					<div class="travel-details">
+						<div class="input-box">
+							<span class="details">Distancia en kilómetros</span>
+							<input
+								type="number"
+								step="any"
+								placeholder="Ingresa la distancia"
+								id="distance"
+							/>
+						</div>
+					</div>
+					<!-- <div class="payment-details">
+						<div class="input-box">
+							<input type="radio" name="payment" id="dot-1" />
+							<input type="radio" name="payment" id="dot-2" />
+							<span class="payment-title">Método de pago</span>
+							<div class="category">
+								<label for="dot-1">
+									<span class="dot one"></span>
+									<span class="method">Efectivo</span>
+								</label>
+								<label for="dot-2">
+									<span class="dot two"></span>
+									<span class="method">MercadoPago</span>
+								</label>
+							</div>
+						</div>
+					</div> -->
+					<div class="extra-details">
+						<div class="input-box">
+							<span class="details">Extra</span>
+							<label class="form-control">
+								<input type="checkbox" name="night-time" id="night-time" />
+								Tarifa nocturna
+							</label>
+							<label class="form-control">
+								<input type="checkbox" name="return" id="return" />
+								Retorno
+							</label>
+						</div>
+					</div>
+					<div class="button">
+						<input type="submit" value="Calcular" />
+					</div>
+				</form>
+				<div class="fare-result"></div>
+				<div class="modal" id="ventanaModal">
+					<div class="contenido-modal">
+						<span class="cerrar">&times;</span>
+						<h2 id="modal-title"></h2>
+						<p id="modal-content"></p>
+					</div>
+				</div>
+				<div class="shortcuts">
+					<span class="shortcuts-title">Atajos</span>
+					<ul id="shortcuts-list">
+						<li><button id="button-one">La Plata - Ezeiza</button></li>
+						<li><button id="button-two">Ezeiza - La Plata</button></li>
+						<li><button id="button-three">La Plata - Aeroparque</button></li>
+						<li><button id="button-four">Aeroparque - La Plata</button></li>
+					</ul>
+				</div>
+			</div>
+		</main>
+	</body>
+</html>
