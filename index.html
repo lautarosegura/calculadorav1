@@ -1,81 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Presupuestadora LH</title>
-		<link rel="stylesheet" href="/assets/styles/styles.css" />
-		<script src="/assets/scripts/app.js" defer></script>
-	</head>
-	<body>
-		<main>
-			<div class="container">
-				<div class="title">Presupuestadora LH</div>
-				<form action="#">
-					<div class="travel-details">
-						<div class="input-box">
-							<span class="details">Distancia en kilómetros</span>
-							<input
-								type="number"
-								step="any"
-								placeholder="Ingresa la distancia"
-								id="distance"
-							/>
-						</div>
-					</div>
-					<!-- <div class="payment-details">
-						<div class="input-box">
-							<input type="radio" name="payment" id="dot-1" />
-							<input type="radio" name="payment" id="dot-2" />
-							<span class="payment-title">Método de pago</span>
-							<div class="category">
-								<label for="dot-1">
-									<span class="dot one"></span>
-									<span class="method">Efectivo</span>
-								</label>
-								<label for="dot-2">
-									<span class="dot two"></span>
-									<span class="method">MercadoPago</span>
-								</label>
-							</div>
-						</div>
-					</div> -->
-					<div class="extra-details">
-						<div class="input-box">
-							<span class="details">Extra</span>
-							<label class="form-control">
-								<input type="checkbox" name="night-time" id="night-time" />
-								Tarifa nocturna
-							</label>
-							<label class="form-control">
-								<input type="checkbox" name="return" id="return" />
-								Retorno
-							</label>
-						</div>
-					</div>
-					<div class="button">
-						<input type="submit" value="Calcular" />
-					</div>
-				</form>
-				<div class="fare-result"></div>
-				<div class="modal" id="ventanaModal">
-					<div class="contenido-modal">
-						<span class="cerrar">&times;</span>
-						<h2 id="modal-title"></h2>
-						<p id="modal-content"></p>
-					</div>
-				</div>
-				<div class="shortcuts">
-					<span class="shortcuts-title">Atajos</span>
-					<ul id="shortcuts-list">
-						<li><button id="button-one">La Plata - Ezeiza</button></li>
-						<li><button id="button-two">Ezeiza - La Plata</button></li>
-						<li><button id="button-three">La Plata - Aeroparque</button></li>
-						<li><button id="button-four">Aeroparque - La Plata</button></li>
-					</ul>
-				</div>
-			</div>
-		</main>
-	</body>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="assets/styles/styles.css" />
+    <title>Fare Calculator</title>
+  </head>
+  <body>
+    <div class="container mt-3">
+        <div class="row">
+          <div class="col-md-9">
+            <h1 class="text-center">Calculadora</h1>
+      <form id="fare-calculator">
+        <div class="form-group">
+          <label for="distance">Distancia (en kilometros):</label>
+          <input
+            type="number"
+            class="form-control"
+            id="distance"
+            placeholder="Ingresa la distancia"
+            step="0.1"
+          />
+        </div>
+        <div class="form-group form-check">
+          <input
+            type="checkbox"
+            class="form-check-input"
+            id="night-time"
+          />
+          <label class="form-check-label" for="night-time">Tarifa nocturna</label>
+        </div>
+        <div class="form-group form-check">
+          <input type="checkbox" class="form-check-input" id="return" />
+          <label class="form-check-label" for="return">Retorno</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Calcular</button>
+        <button class="btn btn-danger" id="clear">Limpiar</button>
+      </form>
+      <h2 id="result" class="text-center"></h2>
+          </div>
+          <div class="col-md-3">
+            <h5>Viajes frecuentes</h5>
+            <ul class="list-group">
+              <li class="list-group-item"><a data-target="lp-ezeiza" class="shortcut">La Plata - Ezeiza</a></li>
+              <li class="list-group-item"><a data-target="ezeiza-lp" class="shortcut">Ezeiza - La Plata</a></li>
+              <li class="list-group-item"><a data-target="lp-aeroparque" class="shortcut">La Plata - Aeroparque</a></li>
+              <li class="list-group-item"><a data-target="aeroparque-lp" class="shortcut">Aeroparque - La Plata</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    ></script>
+    <script src="assets/scripts/app.js" defer></script>
+    </body>
 </html>
